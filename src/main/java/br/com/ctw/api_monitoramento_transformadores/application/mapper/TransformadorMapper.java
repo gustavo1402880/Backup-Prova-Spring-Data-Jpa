@@ -1,7 +1,9 @@
 package br.com.ctw.api_monitoramento_transformadores.application.mapper;
 
-import br.com.ctw.api_monitoramento_transformadores.application.dto.request.TranformadorRequest;
-import br.com.ctw.api_monitoramento_transformadores.application.dto.response.TranformadorResponse;
+import br.com.ctw.api_monitoramento_transformadores.application.dto.request.TransformadorRequestDTO;
+import br.com.ctw.api_monitoramento_transformadores.application.dto.request.TransformadorUpdateRequestDTO;
+import br.com.ctw.api_monitoramento_transformadores.application.dto.response.TransformadorDetalhadoResponseDTO;
+import br.com.ctw.api_monitoramento_transformadores.application.dto.response.TransformadorResponseDTO;
 import br.com.ctw.api_monitoramento_transformadores.core.entity.AlertaTermico;
 import br.com.ctw.api_monitoramento_transformadores.core.entity.LeituraTermica;
 import br.com.ctw.api_monitoramento_transformadores.core.entity.Tecnico;
@@ -11,10 +13,25 @@ import org.springframework.stereotype.Component;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * Transfomador - Mapper
+ *
+ * <p>Objeto da camada mapper de Transfomador,
+ * responsável por mapear entidade e dto</p>
+ *
+ * @author gustavo_pelissari150
+ * @version 1.0.0
+ */
 @Component
 public class TransformadorMapper {
 
-    public Transformador toEntity(TranformadorRequest request) {
+    /**
+     * Mapeia DTO Request para Entidade
+     *
+     * @param request DTO de requisição para Transformador
+     * @return entidade {@link Transformador} mapeada corretamente
+     */
+    public Transformador toEntity(TransformadorRequestDTO request) {
         return Transformador.builder()
                 .numeroSerie(request.numeroSerie())
                 .modelo(request.modelo())
@@ -25,8 +42,55 @@ public class TransformadorMapper {
                 .build();
     }
 
-    public TranformadorResponse toResponse(Transformador entity) {
-        return new TranformadorResponse(
+    /**
+     * Mapeia Entidade para DTO Response
+     *
+     * @param entity Objeto entidade de Transformador
+     * @return DTO de resposta de Transfomador
+     */
+    public TransformadorResponseDTO toResponse(Transformador entity) {
+        return new TransformadorResponseDTO(
+                entity.getId(),
+                entity.getNumeroSerie(),
+                entity.getModelo(),
+                entity.getSubestacao(),
+                entity.getPotenciaKva(),
+                entity.getLimiteTempoOleo(),
+                entity.getLimiteTempEnrol()
+        );
+    }
+
+    /**
+     * Atualiza entidade através da DTO update
+     *
+     * @param entity Objeto entidade de Transformador
+     * @param request DTO de requisição para atualizar Transformador
+     * @return entidade {@link Transformador} atualizada corretamente
+     */
+    public Transformador update(Transformador entity, TransformadorUpdateRequestDTO request) {
+        entity.setLimiteTempoOleo(
+                request.limiteTempoOleo() != null
+                        ? request.limiteTempoOleo()
+                        : entity.getLimiteTempoOleo()
+        );
+        entity.setLimiteTempEnrol(
+                request.limiteTempEnrol() != null
+                        ? request.limiteTempEnrol()
+                        : entity.getLimiteTempEnrol()
+        );
+
+        return entity;
+    }
+
+    /**
+     * Mapeia Entidade para DTO Response Detalhado
+     *
+     * @param entity Objeto entidade de Transformador
+     * @return DTO de resposta de Transfomador detalhado
+     * com mais campos
+     */
+    public TransformadorDetalhadoResponseDTO toDetalhadoResponse(Transformador entity) {
+        return new TransformadorDetalhadoResponseDTO(
                 entity.getId(),
                 entity.getNumeroSerie(),
                 entity.getModelo(),

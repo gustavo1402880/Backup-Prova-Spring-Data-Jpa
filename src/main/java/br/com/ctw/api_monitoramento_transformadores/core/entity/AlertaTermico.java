@@ -5,7 +5,17 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
-
+/**
+ * Alerta Térmico - Entity
+ *
+ * <p>Camada de entity de {@link AlertaTermico},
+ * responsável por armazenar os dados
+ * da entidade e algumas regras de negócio
+ * básicas</p>
+ *
+ * @author gustavo_pelissari150
+ * @version 1.0.0
+ */
 @Entity
 @Table(name = "alerta_termico")
 @Getter

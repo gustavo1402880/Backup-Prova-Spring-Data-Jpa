@@ -6,6 +6,17 @@ import lombok.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Técnico - Entity
+ *
+ * <p>Camada de entity de {@link Tecnico},
+ * responsável por armazenar os dados
+ * da entidade e algumas regras de negócio
+ * básicas</p>
+ *
+ * @author gustavo_pelissari150
+ * @version 1.0.0
+ */
 @Entity
 @Table(name = "tecnico")
 @Getter

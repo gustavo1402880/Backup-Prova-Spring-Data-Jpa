@@ -1,10 +1,10 @@
 -- =============================================================================
 -- CARGA DE DADOS DE TESTE: TRANSFORMADORES
 -- =============================================================================
-INSERT INTO transformador ( numero_serie, modelo, subestacao, potencia_kva, limite_temp_oleo, limite_temp_enrol)
+INSERT INTO transformador ( numero_serie, modelo, subestacao, potencia_kva, limite_temp_oleo, limite_temp_enrolamento)
 VALUES ( 'TRF-2026-1001', 'Transformador Trifásico de Força 15MVA', 'Subestação Central - Setor A', 15000.00, 85.00, 105.00);
 
-INSERT INTO transformador (numero_serie, modelo, subestacao, potencia_kva, limite_temp_oleo, limite_temp_enrol)
+INSERT INTO transformador (numero_serie, modelo, subestacao, potencia_kva, limite_temp_oleo, limite_temp_enrolamento)
 VALUES ('TRF-2026-1002', 'Transformador Elevador de Tensão 30MVA', 'Subestação Norte - Setor B', 30000.00, 80.00, 100.00);
 
 -- =============================================================================
@@ -33,8 +33,8 @@ INSERT INTO transformador_tecnico (transformador_id, tecnico_id	) VALUES (2, 3);
 -- =============================================================================
 -- CARGA DE DADOS DE TESTE: LEITURAS E ALERTAS
 -- =============================================================================
-INSERT INTO leitura_termica ( transformador_id, temp_oleo, temp_enrolamento, data_hora_leitura)
+INSERT INTO leitura_termica ( transformador_id, temp_oleo, temp_enrolamento, data_hora)
 VALUES (1, 89.00, 110.50, '2026-09-10 12:00:00');
 
-INSERT INTO alerta_termico (transf_id, leitura_id, data_alerta, tipo, descricao)
+INSERT INTO alerta_termico (transformador_id, leitura_id, data_alerta, tipo, descricao)
 VALUES (1, 1, '2026-09-10 12:00:05', 'SOBREAQUECIMENTO_CRITICO', 'muito grave');
