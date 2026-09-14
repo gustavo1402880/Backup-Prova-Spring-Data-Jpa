@@ -1,13 +1,13 @@
-package br.com.ctw.api_monitoramento_transformadores.application.mapper;
+package br.com.ctw.api_monitoramento_transformadores.mapper;
 
-import br.com.ctw.api_monitoramento_transformadores.application.dto.request.TransformadorRequestDTO;
-import br.com.ctw.api_monitoramento_transformadores.application.dto.request.TransformadorUpdateRequestDTO;
-import br.com.ctw.api_monitoramento_transformadores.application.dto.response.TransformadorDetalhadoResponseDTO;
-import br.com.ctw.api_monitoramento_transformadores.application.dto.response.TransformadorResponseDTO;
-import br.com.ctw.api_monitoramento_transformadores.core.entity.AlertaTermico;
-import br.com.ctw.api_monitoramento_transformadores.core.entity.LeituraTermica;
-import br.com.ctw.api_monitoramento_transformadores.core.entity.Tecnico;
-import br.com.ctw.api_monitoramento_transformadores.core.entity.Transformador;
+import br.com.ctw.api_monitoramento_transformadores.dto.request.TransformadorRequestDTO;
+import br.com.ctw.api_monitoramento_transformadores.dto.request.TransformadorUpdateRequestDTO;
+import br.com.ctw.api_monitoramento_transformadores.dto.response.TransformadorDetalhadoResponseDTO;
+import br.com.ctw.api_monitoramento_transformadores.dto.response.TransformadorResponseDTO;
+import br.com.ctw.api_monitoramento_transformadores.entity.AlertaTermico;
+import br.com.ctw.api_monitoramento_transformadores.entity.LeituraTermica;
+import br.com.ctw.api_monitoramento_transformadores.entity.Tecnico;
+import br.com.ctw.api_monitoramento_transformadores.entity.Transformador;
 import org.springframework.stereotype.Component;
 
 import java.util.Set;

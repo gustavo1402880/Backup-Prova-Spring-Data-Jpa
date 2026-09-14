@@ -1,13 +1,13 @@
-package br.com.ctw.api_monitoramento_transformadores.application.service;
+package br.com.ctw.api_monitoramento_transformadores.service;
 
-import br.com.ctw.api_monitoramento_transformadores.application.dto.request.TransformadorRequestDTO;
-import br.com.ctw.api_monitoramento_transformadores.application.dto.request.TransformadorUpdateRequestDTO;
-import br.com.ctw.api_monitoramento_transformadores.application.dto.response.TransformadorDetalhadoResponseDTO;
-import br.com.ctw.api_monitoramento_transformadores.application.dto.response.TransformadorResponseDTO;
-import br.com.ctw.api_monitoramento_transformadores.application.mapper.TransformadorMapper;
-import br.com.ctw.api_monitoramento_transformadores.core.entity.Transformador;
+import br.com.ctw.api_monitoramento_transformadores.dto.request.TransformadorRequestDTO;
+import br.com.ctw.api_monitoramento_transformadores.dto.request.TransformadorUpdateRequestDTO;
+import br.com.ctw.api_monitoramento_transformadores.dto.response.TransformadorDetalhadoResponseDTO;
+import br.com.ctw.api_monitoramento_transformadores.dto.response.TransformadorResponseDTO;
+import br.com.ctw.api_monitoramento_transformadores.mapper.TransformadorMapper;
+import br.com.ctw.api_monitoramento_transformadores.entity.Transformador;
 import br.com.ctw.api_monitoramento_transformadores.exception.EntityNotFoundException;
-import br.com.ctw.api_monitoramento_transformadores.infrastructure.repository.TransformadorRepository;
+import br.com.ctw.api_monitoramento_transformadores.repository.TransformadorRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

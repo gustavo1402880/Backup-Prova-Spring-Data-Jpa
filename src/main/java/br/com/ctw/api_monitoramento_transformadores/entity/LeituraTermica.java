@@ -1,4 +1,4 @@
-package br.com.ctw.api_monitoramento_transformadores.core.entity;
+package br.com.ctw.api_monitoramento_transformadores.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
